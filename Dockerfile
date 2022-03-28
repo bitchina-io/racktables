@@ -2,8 +2,11 @@ FROM alpine:latest
 LABEL Maintainer="Chip Shabazian <cshabazian@gmail.com>"
 LABEL Description="Lightweight container with nginx & PHP 8.0 based on Alpine Linux and running racktables."
 
-# Install packages and remove default server definition
-RUN apk --no-cache add \
+# Install packages and remove default server definition 
+RUN echo  -e 'https://mirrors.aliyun.com/alpine/v3.15/main/\nhttps://mirrors.aliyun.com/alpine/v3.15/community/' > /etc/apk/repositories &&\
+  apk update && \
+  apk upgrade && \
+  apk add --no-cache \
   curl \
   nginx \
   php8 \
