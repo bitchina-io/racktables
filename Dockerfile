@@ -66,7 +66,7 @@ VOLUME /var/www/html
 WORKDIR /var/www/html
 
 # Expose the port nginx is reachable on
-EXPOSE 8080
+EXPOSE 9199
 
 # Let supervisord start nginx & php-fpm
 CMD ["/usr/bin/supervisord", "-c", "/etc/supervisor/conf.d/supervisord.conf"]
